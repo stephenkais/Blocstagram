@@ -52,7 +52,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [DataSource sharedInstance].mediaItems.count; //3
+    return [self items].count; //3
 }
 
 
@@ -74,7 +74,7 @@
         [cell.contentView addSubview:imageView];
     } //6
     
-    Media *item = [DataSource sharedInstance].mediaItems[indexPath.row];
+    Media *item = [self items][indexPath.row];
     imageView.image = item.image;
     
     // Configure the cell...
@@ -83,10 +83,15 @@
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Media *item = [DataSource sharedInstance].mediaItems[indexPath.row];
+    Media *item = [self items][indexPath.row];
     UIImage *image = item.image;
     return image.size.height / image.size.width * CGRectGetWidth(self.view.frame);
 } //7
+
+- (NSArray*) items{
+    NSArray *item = [DataSource sharedInstance].mediaItems;
+    return item;
+}
 
 /*
 // Override to support conditional editing of the table view.

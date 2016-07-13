@@ -26,6 +26,7 @@ static UIColor *commentLabelGray;
 static UIColor *linkColor;
 static NSParagraphStyle *paragraphStyle;
 
+
 @implementation MediaTableViewCell
 
 + (void)load {
@@ -68,25 +69,34 @@ static NSParagraphStyle *paragraphStyle;
 
 - (NSAttributedString *) usernameAndCaptionString {
     CGFloat usernameFontSize = 15;
+
     NSString *baseString = [NSString stringWithFormat:@"%@ %@", self.mediaItem.user.userName, self.mediaItem.caption];
     NSMutableAttributedString *mutableUsernameAndCaptionString = [[NSMutableAttributedString alloc] initWithString:baseString attributes:@{NSFontAttributeName :[ lightFont fontWithSize:usernameFontSize], NSParagraphStyleAttributeName : paragraphStyle}];
- 
+    
+    NSRange commentRange = NSMakeRange([self.mediaItem.user.userName length], ([baseString length] - [self.mediaItem.user.userName length]) );
     NSRange usernameRange = [baseString rangeOfString:self.mediaItem.user.userName];
     [mutableUsernameAndCaptionString addAttribute:NSFontAttributeName value:[boldFont fontWithSize:usernameFontSize] range:usernameRange];
     [mutableUsernameAndCaptionString addAttribute:NSForegroundColorAttributeName value:linkColor range:usernameRange];
+    [mutableUsernameAndCaptionString addAttribute:NSKernAttributeName value:@8 range:commentRange];
     return mutableUsernameAndCaptionString;
 } //11
 
 -(NSAttributedString *) commentString {
     NSMutableAttributedString *commentString = [[NSMutableAttributedString alloc] init];
-    
+    NSInteger index = 0;
     for (Comment *comment in self.mediaItem.comments) {
         NSString *baseString = [NSString stringWithFormat:@"%@ %@/n", comment.from.userName, comment.text];
         NSMutableAttributedString *oneCommentString = [[NSMutableAttributedString alloc] initWithString:baseString attributes:@{NSFontAttributeName : lightFont, NSParagraphStyleAttributeName : paragraphStyle}];
         
         NSRange usernameRange = [baseString rangeOfString:comment.from.userName];
         [oneCommentString addAttribute:NSFontAttributeName value:boldFont range:usernameRange];
-        [oneCommentString addAttribute:NSForegroundColorAttributeName value:linkColor range:usernameRange];
+        if (index<1){
+            [oneCommentString addAttribute:NSForegroundColorAttributeName value:[UIColor orangeColor] range:[baseString rangeOfString:oneCommentString.string]];
+                        [oneCommentString addAttribute:NSForegroundColorAttributeName value:linkColor range:usernameRange];
+            index +=1;
+         } else {
+            [oneCommentString addAttribute:NSForegroundColorAttributeName value:linkColor range:usernameRange];
+        }
         
         [commentString appendAttributedString:oneCommentString];
     }

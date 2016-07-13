@@ -24,6 +24,10 @@
 		D6BE904E1D35CB2B006C68E7 /* 9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D6BE90441D35CB2B006C68E7 /* 9.jpg */; };
 		D6BE904F1D35CB2B006C68E7 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D6BE90451D35CB2B006C68E7 /* 10.jpg */; };
 		D6BE90521D35D42D006C68E7 /* ImagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BE90511D35D42D006C68E7 /* ImagesTableViewController.m */; };
+		D6BE90551D36AA34006C68E7 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BE90541D36AA34006C68E7 /* User.m */; };
+		D6BE90581D36AA9F006C68E7 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BE90571D36AA9F006C68E7 /* Media.m */; };
+		D6BE905B1D36AB47006C68E7 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BE905A1D36AB47006C68E7 /* Comment.m */; };
+		D6BE905E1D36ADD0006C68E7 /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BE905D1D36ADD0006C68E7 /* DataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,14 @@
 		D6BE90451D35CB2B006C68E7 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
 		D6BE90501D35D42D006C68E7 /* ImagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesTableViewController.h; sourceTree = "<group>"; };
 		D6BE90511D35D42D006C68E7 /* ImagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesTableViewController.m; sourceTree = "<group>"; };
+		D6BE90531D36AA34006C68E7 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		D6BE90541D36AA34006C68E7 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		D6BE90561D36AA9F006C68E7 /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Media.h; sourceTree = "<group>"; };
+		D6BE90571D36AA9F006C68E7 /* Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Media.m; sourceTree = "<group>"; };
+		D6BE90591D36AB47006C68E7 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		D6BE905A1D36AB47006C68E7 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		D6BE905C1D36ADD0006C68E7 /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
+		D6BE905D1D36ADD0006C68E7 /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +136,14 @@
 				D6BE8FF81D35C86C006C68E7 /* AppDelegate.m */,
 				D6BE90501D35D42D006C68E7 /* ImagesTableViewController.h */,
 				D6BE90511D35D42D006C68E7 /* ImagesTableViewController.m */,
+				D6BE90531D36AA34006C68E7 /* User.h */,
+				D6BE90541D36AA34006C68E7 /* User.m */,
+				D6BE90561D36AA9F006C68E7 /* Media.h */,
+				D6BE90571D36AA9F006C68E7 /* Media.m */,
+				D6BE90591D36AB47006C68E7 /* Comment.h */,
+				D6BE905A1D36AB47006C68E7 /* Comment.m */,
+				D6BE905C1D36ADD0006C68E7 /* DataSource.h */,
+				D6BE905D1D36ADD0006C68E7 /* DataSource.m */,
 				D6BE90001D35C86C006C68E7 /* Assets.xcassets */,
 				D6BE90021D35C86C006C68E7 /* LaunchScreen.storyboard */,
 				D6BE90051D35C86C006C68E7 /* Info.plist */,
@@ -314,7 +334,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6BE90551D36AA34006C68E7 /* User.m in Sources */,
+				D6BE905B1D36AB47006C68E7 /* Comment.m in Sources */,
+				D6BE90581D36AA9F006C68E7 /* Media.m in Sources */,
 				D6BE8FF91D35C86C006C68E7 /* AppDelegate.m in Sources */,
+				D6BE905E1D36ADD0006C68E7 /* DataSource.m in Sources */,
 				D6BE8FF61D35C86C006C68E7 /* main.m in Sources */,
 				D6BE90521D35D42D006C68E7 /* ImagesTableViewController.m in Sources */,
 			);
@@ -534,6 +558,7 @@
 				D6BE90201D35C86D006C68E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D6BE90211D35C86D006C68E7 /* Build configuration list for PBXNativeTarget "BlocstagramTests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +567,7 @@
 				D6BE90231D35C86D006C68E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D6BE90241D35C86D006C68E7 /* Build configuration list for PBXNativeTarget "BlocstagramUITests" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +576,7 @@
 				D6BE90261D35C86D006C68E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

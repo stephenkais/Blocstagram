@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D750AA549416208F97819EEB438F8DD7F34ABEBE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D0F86D6EEF9635C323E138680EF2A6E16966CE96" : 0,
+    "D750AA549416208F97819EEB438F8DD7F34ABEBE" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "88C444B0-AE69-499C-A795-748255289D97",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D0F86D6EEF9635C323E138680EF2A6E16966CE96" : "..\/..\/..",
+    "D750AA549416208F97819EEB438F8DD7F34ABEBE" : "Blocstagram\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Blocstagram",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Blocstagram\/Blocstagram.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:stephenkais\/Alcolator.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D0F86D6EEF9635C323E138680EF2A6E16966CE96"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:stephenkais\/Blocstagram.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D750AA549416208F97819EEB438F8DD7F34ABEBE"
+    }
+  ]
+}

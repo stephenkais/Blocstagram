@@ -149,4 +149,9 @@
 } //actual deletion of media items in source. 
 
 
+- (void) deleteAndInsertMediaItem:(Media *)item current_index:(NSUInteger)current_index desiredIndex:(NSUInteger)desired_index{
+    [self removeObjectFromMediaItemsAtIndex:current_index];
+    [self insertObject:item inMediaItemsAtIndex:desired_index];
+}
+
 @end

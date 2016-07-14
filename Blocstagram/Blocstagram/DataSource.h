@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class Media;
 @interface DataSource : NSObject
 
 +(instancetype) sharedInstance;
 @property (nonatomic, strong, readonly) NSArray *mediaItems;
 
+- (void) deleteMediaItem:(Media *)item; //enables us to modify the array. otherwise trapped in DataSoruce.
 
 @end

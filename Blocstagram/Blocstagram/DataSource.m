@@ -11,7 +11,9 @@
 #import "Media.h"
 #import "Comment.h"
 
-@interface DataSource ()
+@interface DataSource (){
+    NSMutableArray *_mediaItems;
+}
 
 @property (nonatomic, strong) NSArray *mediaItems;
 
@@ -114,6 +116,37 @@
     
     return [NSString stringWithString:s];
 }
+
+#pragma mark - Key/Value Observing
+
+- (NSUInteger) countOFMediaItems {
+    return self.mediaItems.count;
+}
+
+- (id) objectInMediaItemsAtIndex: (NSUInteger)index {
+    return [self.mediaItems objectAtIndex:index];
+}
+
+- (NSArray *) mediaItemsAtIndexes:(NSIndexSet *)indexes {
+    return [self.mediaItems objectsAtIndexes:indexes];
+} //18 3 methods above
+
+- (void) insertObject:(Media *)object inMediaItemsAtIndex:(NSUInteger)index {
+    [_mediaItems insertObject:object atIndex:index];
+}
+     
+- (void) removeObjectFromMediaItemsAtIndex:(NSUInteger)index {
+    [_mediaItems removeObjectAtIndex:index];
+}
+
+- (void) replaceObjectInMediaItemsAtIndex: (NSUInteger)index withObject:(id)object{
+    [_mediaItems replaceObjectAtIndex:index withObject:object];
+}
+
+- (void) deleteMediaItem:(Media *)item {
+    NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"mediaItems"];
+    [mutableArrayWithKVO removeObject:item];
+} //actual deletion of media items in source. 
 
 
 @end

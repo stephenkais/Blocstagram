@@ -35,6 +35,10 @@
     
     [[DataSource sharedInstance] addObserver:self forKeyPath:@"mediaItems" options:0 context:nil]; //19
     
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshControlDidFire:) forControlEvents:UIControlEventValueChanged];
+    
+    
     [self.tableView registerClass:[MediaTableViewCell class] forCellReuseIdentifier:@"mediaCell"]; //2
     
     // Uncomment the following line to preserve selection between presentations.
@@ -100,6 +104,15 @@
 }
 
 
+#pragma mark - Refreshing
+
+- (void) refreshControlDidFire:(UIRefreshControl *) sender {
+    [[DataSource sharedInstance] requestNewItemWithCompletionHandler:^(NSError *error) {
+        [sender endRefreshing];
+    }];
+}
+
+
 #pragma mark - Table view data source
 
 
@@ -123,7 +136,25 @@
     Media *item = [DataSource sharedInstance].mediaItems[indexPath.row];
     return [MediaTableViewCell heightForMediaItem:item width:CGRectGetWidth(self.view.frame)];
     
-} //17
+}
+
+#pragma mark infinite scroll
+
+- (void) infiniteScrollIfNecessary {
+    NSIndexPath *bottomIndexPath = [[self.tableView indexPathsForVisibleRows] lastObject];
+    
+    if (bottomIndexPath && bottomIndexPath.row == [DataSource sharedInstance].mediaItems.count - 1){
+        [[DataSource sharedInstance] requestOldItemsWithCompletionHandler:nil];
+    }
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void) scrollViewDidScroll:(UIScrollView *)scrollView{
+    [self infiniteScrollIfNecessary];
+}
+
+//17
 
 /*
 // Override to support conditional editing of the table view.

@@ -8,11 +8,18 @@
 
 #import <Foundation/Foundation.h>
 @class Media;
+
+typedef void (^NewItemCompletionBlock)(NSError *error); //defined completion block that tells us if there is an error basically (I think).
+
+
 @interface DataSource : NSObject
 
 +(instancetype) sharedInstance;
 @property (nonatomic, strong, readonly) NSArray *mediaItems;
 
 - (void) deleteMediaItem:(Media *)item; //enables us to modify the array. otherwise trapped in DataSoruce.
+- (void) requestNewItemWithCompletionHandler:(NewItemCompletionBlock)completionHandler;
+- (void) requestOldItemsWithCompletionHandler:(NewItemCompletionBlock)completionHandler;
+
 
 @end

@@ -31,6 +31,9 @@ NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewCo
     UIWebView *webView = [[UIWebView alloc] init];
     webView.delegate = self;
     
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style: UIBarButtonItemStylePlain target:self action:@selector(Back)];
+    self.navigationItem.leftBarButtonItem = backButton;
+    
     [self.view addSubview:webView];
     self.webView = webView; //sets up a blank webview
     
@@ -44,6 +47,11 @@ NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewCo
         [self.webView loadRequest:request];
     } //sets up the view based on my developer API credentials.
     
+}
+
+- (IBAction)Back
+{
+    [self dismissViewControllerAnimated:YES completion:nil]; // ios 6
 }
 
 - (void) dealloc {

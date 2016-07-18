@@ -124,7 +124,7 @@
 #pragma mark instagramAPI
 
 + (NSString *) instagramClientID {
-    return @"e78f2c9ecc4b43f1a743201655e3c38c";
+    return @"dbf54153d1c74a93aae2416015a528a6";
 }
 
 - (void) populateDataWithParameters:(NSDictionary *)parameters {

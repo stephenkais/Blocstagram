@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D67C53B91D3D4055003D6E70 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D67C53B81D3D4055003D6E70 /* LoginViewController.m */; };
 		D6BE8FF61D35C86C006C68E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BE8FF51D35C86C006C68E7 /* main.m */; };
 		D6BE8FF91D35C86C006C68E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BE8FF81D35C86C006C68E7 /* AppDelegate.m */; };
 		D6BE90011D35C86C006C68E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6BE90001D35C86C006C68E7 /* Assets.xcassets */; };
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D67C53B71D3D4055003D6E70 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		D67C53B81D3D4055003D6E70 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D6BE8FF11D35C86C006C68E7 /* Blocstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blocstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6BE8FF51D35C86C006C68E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D6BE8FF71D35C86C006C68E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -139,6 +142,8 @@
 				D6BE8FF81D35C86C006C68E7 /* AppDelegate.m */,
 				D6BE90501D35D42D006C68E7 /* ImagesTableViewController.h */,
 				D6BE90511D35D42D006C68E7 /* ImagesTableViewController.m */,
+				D67C53B71D3D4055003D6E70 /* LoginViewController.h */,
+				D67C53B81D3D4055003D6E70 /* LoginViewController.m */,
 				D6BE905F1D36BF02006C68E7 /* MediaTableViewCell.h */,
 				D6BE90601D36BF02006C68E7 /* MediaTableViewCell.m */,
 				D6BE90531D36AA34006C68E7 /* User.h */,
@@ -344,6 +349,7 @@
 				D6BE90611D36BF02006C68E7 /* MediaTableViewCell.m in Sources */,
 				D6BE90581D36AA9F006C68E7 /* Media.m in Sources */,
 				D6BE8FF91D35C86C006C68E7 /* AppDelegate.m in Sources */,
+				D67C53B91D3D4055003D6E70 /* LoginViewController.m in Sources */,
 				D6BE905E1D36ADD0006C68E7 /* DataSource.m in Sources */,
 				D6BE8FF61D35C86C006C68E7 /* main.m in Sources */,
 				D6BE90521D35D42D006C68E7 /* ImagesTableViewController.m in Sources */,

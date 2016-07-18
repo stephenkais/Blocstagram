@@ -16,10 +16,14 @@ typedef void (^NewItemCompletionBlock)(NSError *error); //defined completion blo
 
 +(instancetype) sharedInstance;
 @property (nonatomic, strong, readonly) NSArray *mediaItems;
+@property (nonatomic, strong, readonly) NSString *accessToken;
 
 - (void) deleteMediaItem:(Media *)item; //enables us to modify the array. otherwise trapped in DataSoruce.
 - (void) requestNewItemWithCompletionHandler:(NewItemCompletionBlock)completionHandler;
 - (void) requestOldItemsWithCompletionHandler:(NewItemCompletionBlock)completionHandler;
+
++ (NSString *) instagramClientID;
+
 
 
 @end

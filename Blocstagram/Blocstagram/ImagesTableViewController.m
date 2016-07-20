@@ -14,8 +14,9 @@
 #import "MediaTableViewCell.h"
 #import "MediaFullScreenViewController.h"
 
-
 @interface ImagesTableViewController () <MediaTableViewCellDelegate>
+
+
 
 @end
 
@@ -39,7 +40,6 @@
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refreshControlDidFire:) forControlEvents:UIControlEventValueChanged];
-    
     
     [self.tableView registerClass:[MediaTableViewCell class] forCellReuseIdentifier:@"mediaCell"]; //2
     

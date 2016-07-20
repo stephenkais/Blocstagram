@@ -9,7 +9,13 @@
 #import <UIKit/UIKit.h>
 
 
-@class Media;
+@class Media, MediaTableViewCell;
+
+@protocol MediaTableViewCellDelegate <NSObject>
+
+- (void) cell:(MediaTableViewCell *)cell didLongPressImageView:(UIImageView *)imageView;
+
+@end
 
 @interface MediaFullScreenViewController : UIViewController
 

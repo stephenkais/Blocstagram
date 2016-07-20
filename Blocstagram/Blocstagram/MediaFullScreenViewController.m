@@ -8,12 +8,14 @@
 
 #import "MediaFullScreenViewController.h"
 #import "Media.h"
+#import "ImagesTableViewController.h"
 
 @interface MediaFullScreenViewController () <UIScrollViewDelegate>
 
 @property (nonatomic, strong) Media *media;
 @property (nonatomic, strong) UITapGestureRecognizer *tap;
 @property (nonatomic, strong) UITapGestureRecognizer *doubleTap;
+@property (nonatomic, weak) UIButton *shareButton;
 
 @end
 
@@ -40,6 +42,18 @@
     
     [self.view addSubview:self.scrollView];
     
+    UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [shareButton setTitle:@"Share" forState:UIControlStateNormal];
+    [shareButton sizeToFit];
+    shareButton.center = CGPointMake(360, 60);
+    
+    [shareButton addTarget:self action:@selector(buttonPressed:)forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:shareButton];
+    
+    ImagesTableViewController* itvc = [[ImagesTableViewController alloc] init];
+    NSString *longPress = [itvc didLongPressImageView];
+
+    
     // #2
     self.imageView = [UIImageView new];
     self.imageView.image = self.media.image;
@@ -58,6 +72,11 @@
     
     [self.scrollView addGestureRecognizer:self.tap];
     [self.scrollView addGestureRecognizer:self.doubleTap];
+}
+
+- (void)buttonPressed:(UIButton *)shareButton {
+    NSLog(@"Button Pressed");
+    [shareButton longPress:self.imageView];
 }
 
 - (void) viewWillLayoutSubviews {
@@ -145,6 +164,8 @@
     }
 }
 
+#pragma mark - Share Button
+ 
 
 /*
 #pragma mark - Navigation
@@ -157,3 +178,4 @@
 */
 
 @end
+
